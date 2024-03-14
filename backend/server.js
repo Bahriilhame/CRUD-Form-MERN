@@ -29,3 +29,8 @@ const schemaData  = mongoose.Schema({
 })
 
 const stagiaireCollection  = mongoose.model("stagiaire",schemaData)
+
+app.get("/",async(req,res)=>{
+    const AllStg = await stagiaireCollection.find({})
+    res.json(AllStg)
+})
