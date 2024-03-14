@@ -8,7 +8,7 @@ app.use(express.json())
 
 const PORT=8080 
 
-mongoose.connect("mongodb://127.0.0.1:27017/cloud_stg")
+mongoose.connect("mongodb://localhost:27017/cloud_stg")
 .then(()=>{
     console.log("Server is running on port :",PORT);
     app.listen(PORT)
