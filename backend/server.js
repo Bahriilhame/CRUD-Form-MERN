@@ -40,3 +40,9 @@ app.post("/create",async(req,res)=>{
     await newStg.save()
     res.send(newStg)
 })
+
+app.put("/update",async(req,res)=>{
+    const { _id,...infos} = req.body 
+    const UpdatedStg = await stagiaireCollection.updateOne({ _id : _id},infos)
+    res.send(UpdatedStg)
+})
