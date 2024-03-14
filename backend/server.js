@@ -34,3 +34,9 @@ app.get("/",async(req,res)=>{
     const AllStg = await stagiaireCollection.find({})
     res.json(AllStg)
 })
+
+app.post("/create",async(req,res)=>{
+    const newStg = await stagiaireCollection.create(req.body);
+    await newStg.save()
+    res.send(newStg)
+})
