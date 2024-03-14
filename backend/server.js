@@ -46,3 +46,8 @@ app.put("/update",async(req,res)=>{
     const UpdatedStg = await stagiaireCollection.updateOne({ _id : _id},infos)
     res.send(UpdatedStg)
 })
+
+app.delete("/delete/:id",async(req,res)=>{
+    const deletedStg = await stagiaireCollection.deleteOne({_id : req.params.id})
+    res.send(deletedStg)
+})
